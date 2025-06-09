@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/placeholders.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -197,26 +199,27 @@
                         </div>
                     </div>
                     <form class="contact-form" data-aos="fade-left">
+                        <div class="success-message">Thank you for your message. We'll get back to you soon!</div>
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" required placeholder="john@company.com">
                             </div>
                             <div class="form-group">
                                 <label for="company">Company</label>
-                                <input type="text" id="company" name="company">
+                                <input type="text" id="company" name="company" placeholder="Your Company Name">
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
                             </div>
                             <div class="form-group full-width">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" required></textarea>
+                                <textarea id="message" name="message" required placeholder="Please tell us about your project or inquiry..."></textarea>
                             </div>
                         </div>
                         <button type="submit" class="btn-submit">Send Message</button>
@@ -228,7 +231,9 @@
     <footer id="main-footer"></footer>    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/components.js"></script>
+    <script src="js/nav.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/image-placeholders.js"></script>
     <script>
         // Initialize AOS
         AOS.init({

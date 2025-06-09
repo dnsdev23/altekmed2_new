@@ -19,7 +19,7 @@
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.5fr repeat(3, 1fr);
+    grid-template-columns: 1.5fr 4fr; /* Adjusted for footer-info and footer-links wrapper */
     gap: 40px;
     margin-bottom: 60px;
 }
@@ -65,6 +65,12 @@
 .social-links a:hover {
     background: #007bff;
     transform: translateY(-5px);
+}
+
+.footer-links { /* New styles for the wrapper of footer columns */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Arrange 4 link columns horizontally */
+    gap: 40px; /* Consistent gap with parent */
 }
 
 .footer-column {
@@ -189,11 +195,21 @@
 /* Responsive Design */
 @media (max-width: 992px) {
     .footer-content {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr; /* Stack footer-info and footer-links */
     }
     
     .footer-info {
         grid-column: 1 / -1;
+        text-align: center; /* Center align info on smaller screens */
+    }
+
+    .social-links {
+        justify-content: center; /* Center social links */
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for links on tablet */
+        gap: 30px;
     }
 }
 
@@ -204,12 +220,32 @@
     
     .footer-bottom .container {
         flex-direction: column;
-        text-align: center;
         gap: 15px;
     }
-    
-    .footer-legal {
-        justify-content: center;
-        flex-wrap: wrap;
+
+    .footer-links {
+        grid-template-columns: 1fr; /* 1 column for links on mobile (stacking) */
+        gap: 20px;
+    }
+
+    .footer-column {
+        text-align: center; /* Center align column content on mobile */
+    }
+
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%); /* Center the heading underline */
+    }
+
+    .footer-column:hover h4::after {
+        width: 50px; /* Keep consistent hover underline width */
+    }
+
+    .footer-column ul li a:hover {
+        transform: translateX(0); /* Disable horizontal shift on mobile */
+    }
+
+    .footer-column ul li a::before {
+        display: none; /* Hide arrow on mobile */
     }
 }

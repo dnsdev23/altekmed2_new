@@ -52,7 +52,7 @@ const directNavHtml = `
     <div class="container">
         <div class="logo">
             <a href="/index.html">
-                <img src="images/logo.png" alt="AltekMed Logo" class="logo-img">
+                <img src="images/logo-altekmed.png" alt="AltekMed Logo" class="logo-img">
             </a>
         </div>
         <ul class="nav-links">
@@ -93,7 +93,7 @@ const pagesNavHtml = `
     <div class="container">
         <div class="logo">
             <a href="/index.html">
-                <img src="../images/logo.png" alt="AltekMed Logo" class="logo-img">
+                <img src="../images/logo-altekmed.png" alt="AltekMed Logo" class="logo-img">
             </a>
         </div>
         <ul class="nav-links">
@@ -134,7 +134,7 @@ const staticFooterHtml = `
     <div class="container">
         <div class="footer-content">
             <div class="footer-info">
-                <img src="/images/logo-white.png" alt="AltekMed Logo" class="footer-logo">
+                <img src="/images/logo-altekmed.png" alt="AltekMed Logo" class="footer-logo">
                 <p>Your Trusted Partner in Medical Device Innovation</p>
                 <div class="social-links">
                     <a href="https://linkedin.com/company/altekmed" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>

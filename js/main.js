@@ -39,12 +39,74 @@ window.addEventListener('scroll', () => {
 // Form Submission
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    // Add input validation and formatting
+    const phoneInput = contactForm.querySelector('#phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            // Format phone number as user types
+            let phone = e.target.value.replace(/\D/g, '');
+            if (phone.length > 0) {
+                phone = phone.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                e.target.value = !phone[2] ? phone[1] : 
+                                !phone[3] ? `(${phone[1]}) ${phone[2]}` :
+                                `(${phone[1]}) ${phone[2]}-${phone[3]}`;
+            }
+        });
+    }
+
+    // Form submission handler
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // Here you would typically send the form data to a server
-        // For now, we'll just show a success message
-        alert('Thank you for your message. We will get back to you soon!');
-        contactForm.reset();
+        const submitButton = contactForm.querySelector('.btn-submit');
+        const successMessage = contactForm.querySelector('.success-message');
+        
+        // Show loading state
+        submitButton.classList.add('loading');
+        submitButton.disabled = true;
+
+        try {
+            // Simulate API call (replace with actual API call)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            // Show success message
+            successMessage.style.display = 'block';
+            contactForm.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            // You could show an error message here
+        } finally {
+            // Remove loading state
+            submitButton.classList.remove('loading');
+            submitButton.disabled = false;
+        }
+    });
+
+    // Add form validation feedback
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('blur', () => {
+            if (input.required) {
+                if (!input.value.trim()) {
+                    input.classList.add('invalid');
+                } else {
+                    input.classList.remove('invalid');
+                }
+            }
+        });
+
+        input.addEventListener('input', () => {
+            if (input.classList.contains('invalid')) {
+                if (input.value.trim()) {
+                    input.classList.remove('invalid');
+                }
+            }
+        });
     });
 }
 
