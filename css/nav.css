@@ -51,17 +51,11 @@
     padding: 0.5rem 0;
     transition: all 0.3s ease;
     position: relative;
+    border-bottom: 0 solid #007bff;
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #007bff;
-    transition: width 0.3s ease;
+.nav-links a:hover {
+    border-bottom: 1px solid #007bff;
 }
 
 .nav-links a:hover::after {
