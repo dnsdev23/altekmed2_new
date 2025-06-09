@@ -19,13 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error loading component:', error);
         }
-    }
-
-    // Load navigation
-    loadComponent('main-nav', '/components/nav.html');
+    }    // Load navigation
+    loadComponent('main-nav', '../components/nav.html');
     
     // Load footer
-    loadComponent('main-footer', '/components/footer.html');
+    loadComponent('main-footer', '../components/footer.html');
 
     // Initialize components after loading
     window.addEventListener('componentLoaded', function(e) {
