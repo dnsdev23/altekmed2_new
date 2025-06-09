@@ -952,6 +952,43 @@
     }
 }
 
+/* Technology Showcase - Core Technologies Grid */
+.tech-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Adjust gap as needed */
+  justify-content: center; /* Or space-between, space-around */
+  margin-top: 40px; /* Add some space below the title */
+}
+
+.tech-card {
+  flex-basis: calc(33.333% - 30px); /* For 3 cards per row, considering the gap */
+  /* If you want a fixed width instead of percentage based, you can use something like: */
+  /* width: 300px; */
+  /* Ensure cards don't shrink too much if flex-basis isn't enough */
+  flex-grow: 0; 
+  flex-shrink: 1;
+  /* Add any other specific styling for tech-card if needed, 
+     or ensure existing .tech-card styles don't conflict with flexbox */
+  display: flex; /* Make tech-card a flex container for its internal content */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+}
+
+/* Responsive adjustments for tech-cards-grid */
+@media (max-width: 992px) {
+  .tech-card {
+    flex-basis: calc(50% - 30px); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-card {
+    flex-basis: 100%; /* 1 card per row */
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .featured-article {
