@@ -1,6 +1,23 @@
 // JavaScript to add placeholder classes to images that fail to load
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Replace all images in subdirectories with AI-generated placeholders
+    const aiImages = Array.from({ length: 10 }, (_, i) => `ai${i+1}.jpg`);
+    let counter = 0;
+    const allImgs = document.querySelectorAll('img');
+    allImgs.forEach(img => {
+        const srcAttr = img.getAttribute('src') || '';
+        // Skip logo images and top-level images
+        if (/^images\/[^\/]+\/.+\.(jpg|png|jpeg|gif)$/i.test(srcAttr) &&
+            !srcAttr.includes('logo') ) {
+            // Determine relative path prefix
+            const prefix = window.location.pathname.includes('/pages/') ? '../images/' : 'images/';
+            const aiFile = aiImages[counter % aiImages.length];
+            img.src = `${prefix}${aiFile}`;
+            counter++;
+        }
+    });
+    
     // Process all images on the page
     const images = document.querySelectorAll('img:not(.logo-img):not(.footer-logo)');
     

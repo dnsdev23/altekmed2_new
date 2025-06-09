@@ -12,16 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preload" href="images/banner-bg.jpg" as="image">
 </head>
 <body>    <!-- Navigation -->
     <div id="main-nav"></div>
 
-    <!-- Hero Section with Video Background -->
-    <header class="hero-video parallax-section">
+    <!-- Hero Section with Video Background and Fallback Image -->
+    <header class="hero-video parallax-section" style="background-image: url('images/ai4.jpg'); background-size: cover; background-position: center;">
         <video autoplay muted loop playsinline class="hero-bg-video">
             <source src="videos/medical-tech.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
+        <div id="loading-text">Loading...</div>
         <div class="container">
             <h1>Leading Innovation in Medical Technology</h1>
             <p class="hero-subtitle">World's #1 CDMO for Single-use Endoscopes and Blood Glucose Monitoring</p>
@@ -40,8 +42,9 @@
                 </div>
             </div>
             <div class="cta-buttons">
-                <a href="#solutions" class="btn-primary">Explore Solutions</a>
-                <a href="#contact" class="btn-secondary">Get in Touch</a>
+                <center>
+                    <a href="#solutions" class="btn-primary">Explore Solutions</a>
+                </center>
             </div>
         </div>
     </header>    <main>
