@@ -1421,3 +1421,31 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* Responsive and better fitting images */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-image img,
+.card-image img,
+.feature-video video,
+.tech-image img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .product-image img,
+    .card-image img,
+    .feature-video video,
+    .tech-image img {
+        height: 180px;
+    }
+}

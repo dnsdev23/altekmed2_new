@@ -9,6 +9,8 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    min-height: 72px;
+    font-size: 1rem;
 }
 
 .navbar.scrolled {
@@ -20,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem !important;
 }
 
 .logo {
@@ -28,7 +30,8 @@
 }
 
 .logo-img {
-    height: 40px;
+    height: 48px !important;
+    max-height: 48px !important;
     transition: all 0.3s ease;
 }
 
@@ -48,10 +51,11 @@
     color: #333;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.75rem !important;
     transition: all 0.3s ease;
     position: relative;
     border-bottom: 0 solid #007bff;
+    font-size: 1rem !important;
 }
 
 .nav-links a:hover {
