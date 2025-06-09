@@ -52,7 +52,7 @@ const directNavHtml = `
     <div class="container">
         <div class="logo">
             <a href="/index.html">
-                <img src="images/logo-altekmed.png" alt="AltekMed Logo" class="logo-img">
+                <img src="/images/logo-altekmed.png" alt="AltekMed Logo" class="logo-img">
             </a>
         </div>
         <ul class="nav-links">
@@ -93,7 +93,7 @@ const pagesNavHtml = `
     <div class="container">
         <div class="logo">
             <a href="/index.html">
-                <img src="../images/logo-altekmed.png" alt="AltekMed Logo" class="logo-img">
+                <img src="/images/logo-altekmed.png" alt="AltekMed Logo" class="logo-img">
             </a>
         </div>
         <ul class="nav-links">
